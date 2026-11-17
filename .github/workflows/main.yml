@@ -16,10 +16,10 @@ jobs:
         with:
           node-version: "20"
       - run: npm install --legacy-peer-deps
-      - run: npm run build
+      - run: npm run build -- --base=/amica/
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./dist
   deploy:
     environment:
       name: github-pages
